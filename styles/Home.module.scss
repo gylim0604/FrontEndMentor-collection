@@ -1,0 +1,105 @@
+.container {
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid_title {
+    margin-bottom: 2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+.title {
+    h1 {
+        margin-bottom: 0.2em;
+    }
+    p {
+        color: hsl(0, 0%, 50%);
+    }
+    margin-bottom: 150px;
+}
+.card {
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 10px;
+    text-align: left;
+    overflow: hidden;
+
+    .image_wrapper {
+        overflow: hidden;
+        height: 24rem;
+        img {
+            object-fit: cover;
+            height: 24rem;
+            transform: scale(1.03);
+            object-position: 50% 50%;
+            &:hover {
+                transform: scale(1);
+                transition: 300ms ease-in-out transform;
+            }
+        }
+    }
+    .info {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        h4 {
+            font-size: 1.25em;
+            color: hsl(0, 0%, 30%);
+        }
+        img {
+            &:hover {
+                animation: bellshake 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97)
+                    both;
+                backface-visibility: hidden;
+            }
+        }
+        @keyframes bellshake {
+            0% {
+                transform: rotate(0);
+            }
+            15% {
+                transform: rotate(15deg);
+            }
+            30% {
+                transform: rotate(-15deg);
+            }
+            45% {
+                transform: rotate(10deg);
+            }
+            60% {
+                transform: rotate(-10deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+            85% {
+                transform: rotate(-5deg);
+            }
+            92% {
+                transform: rotate(1deg);
+            }
+            100% {
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .grid {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
