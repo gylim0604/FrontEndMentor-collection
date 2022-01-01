@@ -21,6 +21,7 @@ export default function Home() {
                     <h1>
                         <a
                             target='_blank'
+                            rel='noopener noreferrer'
                             href='https://www.frontendmentor.io/'
                         >
                             Front End Mentor Challenges
